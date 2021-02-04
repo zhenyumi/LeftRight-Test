@@ -402,11 +402,16 @@ while not start:
     tips2 = font.render("There are {0} trials in total. ".format(round), 1, (0, 0, 0))
     tips3 = font.render("You have {:.1f}s to get ready before each trial.".format(time_to_wait/1000), 1, (0, 0, 0))
     tips4 = font.render("If you get ready, press 'F' to start.", 1, (0, 0, 0))
+    tips5 = font.render("You should decide which is more,\\ or /", 1, (0, 0, 0))
+    font = pygame.font.Font(None, 40)
+    tips6 = font.render("Press right and left arrow in your keyboard to decide.", 1, (0, 0, 0))
     ## Tips position
     center1 = (screen_width/2, screen_height/2-200)
     center2 = (screen_width/2, screen_height/2-50)
     center3 = (screen_width/2, screen_height/2+50)
     center4 = (screen_width/2, screen_height/2+200)
+    center5 = (screen_width / 2, screen_height / 2 + 100)
+    center6 = (screen_width / 2, screen_height / 2 + 150)
     ## Insert the tips
     tipspos = tips1.get_rect(center=center1)
     background.blit(tips1, tipspos)
@@ -416,6 +421,10 @@ while not start:
     background.blit(tips3, tipspos)
     tipspos = tips4.get_rect(center=center4)
     background.blit(tips4, tipspos)
+    tipspos = tips5.get_rect(center=center5)
+    background.blit(tips5, tipspos)
+    tipspos = tips6.get_rect(center=center6)
+    background.blit(tips6, tipspos)
     ## Update the screen
     screen.blit(background, (0, 0))
     pygame.display.update()
@@ -451,8 +460,8 @@ while running:
         ### The gap info
         tips1 = font.render("Please wait for the next trial.", 1, (0, 0, 0))
         tips2 = font.render("The gap is {:.1f}s".format(time_to_wait/1000), 1, (0, 0, 0))
-        center1 = (screen_width / 2, screen_height / 2 - 50)
-        center2 = (screen_width / 2, screen_height / 2 + 50)
+        center1 = (screen_width / 2, screen_height / 2 - 150)
+        center2 = (screen_width / 2, screen_height / 2)
         tipspos = tips1.get_rect(center=center1)
         background.blit(tips1, tipspos)
         tipspos = tips2.get_rect(center=center2)
